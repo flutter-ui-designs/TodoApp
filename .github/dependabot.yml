@@ -1,0 +1,46 @@
+version: 2
+updates:
+- package-ecosystem: pip
+  directory: "/Backend"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  allow:
+  - dependency-type: direct
+  - dependency-type: indirect
+  ignore:
+  - dependency-name: flask-sqlalchemy
+    versions:
+    - 2.4.4
+    - 2.5.0
+  - dependency-name: marshmallow-sqlalchemy
+    versions:
+    - 0.24.1
+    - 0.24.2
+  - dependency-name: flask-migrate
+    versions:
+    - 2.6.0
+- package-ecosystem: gradle
+  directory: "/App/todoapp/android"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: org.jetbrains.kotlin:kotlin-stdlib-jdk7
+    versions:
+    - 1.4.21-2
+    - 1.4.30
+    - 1.4.31
+    - 1.4.32
+  - dependency-name: org.jetbrains.kotlin:kotlin-gradle-plugin
+    versions:
+    - 1.4.21-2
+    - 1.4.30
+    - 1.4.31
+    - 1.4.32
+  - dependency-name: com.android.tools.build:gradle
+    versions:
+    - 4.1.2
+  - dependency-name: junit:junit
+    versions:
+    - 4.13.1
